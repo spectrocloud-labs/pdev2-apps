@@ -1,0 +1,33 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: nginx-demo
+  namespace: default
+spec:
+  components:
+  - name: nginx-demo
+    properties:
+      cpu: "0.5"
+      exposeType: ClusterIP
+      image: nginx:latest
+      memory: 1024Mi
+      ports:
+      - expose: true
+        port: 80
+        protocol: TCP
+    traits:
+    - properties:
+        replicas: 1
+      type: scaler
+    - type: hpa
+    type: webservice
+  - name: nginx-demo-cm
+    properties:
+      objects:
+      - apiVersion: v1
+        data:
+          foo: bar
+        kind: ConfigMap
+        metadata:
+          name: nginx-cm
+    type: k8s-objects
