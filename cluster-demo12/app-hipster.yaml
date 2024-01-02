@@ -2,6 +2,7 @@ apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
   name: hipster-app
+  namespace: team1
 spec:
   components:
   - name: hipster-frontend
