@@ -11,7 +11,7 @@ spec:
         app: frontend
       cpu: "0.5"
       exposeType: ClusterIP
-      image: gcr.io/spectro-images-public/saamalik/hipster/frontend:white
+      image: gcr.io/spectro-images-public/saamalik/hipster/frontend:black
       memory: 1024Mi
       ports:
       - expose: true
