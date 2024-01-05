@@ -19,7 +19,6 @@ spec:
     - properties:
         replicas: 1
       type: scaler
-    - type: hpa
     type: webservice
   - name: nginx-demo-cm
     properties:
