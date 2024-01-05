@@ -2,6 +2,7 @@ apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
   name: nginx-demo
+  namespace: nginx-demo
 spec:
   components:
   - name: nginx-demo
